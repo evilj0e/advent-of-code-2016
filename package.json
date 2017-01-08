@@ -1,0 +1,27 @@
+{
+  "name": "advent-of-code",
+  "version": "1.0.0",
+  "description": "My solutions to the Advent of Code 2016 puzzles",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evilj0e/advent-of-code-2016.git"
+  },
+  "keywords": [
+    "adventofcode",
+    "puzzles",
+    "code"
+  ],
+  "author": "Anton Konev <info@antonkonev.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^3.13.0",
+    "eslint-config-xo": "^0.17.0"
+  },
+  "eslintConfig": {
+    "extends": "xo/esnext",
+    "rules": {
+      "indent": [2, 4],
+      "default-case": 0
+    }
+  }
+}
