@@ -91,4 +91,30 @@ const solve = rooms => {
     return sum;
 }
 
+const findPole = (rooms, valueToFind = 'northpole object storage') => 
+    getParsedRooms(rooms)
+    .filter(room => 
+        room.name.length === valueToFind.length && 
+        room.name.indexOf('-') === valueToFind.indexOf(' ')
+    )
+    .forEach(room => {
+        const getDecrypt = letter => letter === '-' ? ' ' : String.fromCharCode(
+            (letter.charCodeAt() - 97 + room.weight) % 26 + 97
+        );
+        let isOk = true;
+
+        room.name.split('').forEach((letter, index) => {
+            if (getDecrypt(letter) !== valueToFind[index]) {
+                isOk = false;
+                return;
+            }
+        });
+
+        if (isOk) {
+            console.log(room.weight);
+            return;
+        }
+    });
+
 console.log(solve(rooms));
+findPole(rooms);
